@@ -1,8 +1,17 @@
 import Vue from 'vue'
+import axios from 'axios'
 import App from './App.vue'
+import store from './store'
+import router from './router'
 
-Vue.config.productionTip = false
+
+//将axios挂载到原型上
+Vue.prototype.$axios = axios;
 
 new Vue({
-  render: h => h(App),
+  store,
+  router,
+
+  //h为createElement
+  render: h => h(App)
 }).$mount('#app')
